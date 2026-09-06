@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, updateDoc, where } from 'firebase/firestore';
+import { collection, getDocs, addDoc, deleteDoc, doc, query, orderBy, updateDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import type { Service } from './mockData';
 
@@ -50,7 +50,7 @@ export const addGalleryImage = async (url: string) => {
   return docRef.id;
 };
 
-export const deleteGalleryImage = async (id: string, url: string) => {
+export const deleteGalleryImage = async (id: string) => {
   await deleteDoc(doc(db, 'gallery', id));
 };
 

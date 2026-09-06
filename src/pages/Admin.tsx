@@ -150,9 +150,9 @@ export function Admin() {
     }
   };
 
-  const handleDeleteGalleryImage = async (id: string, url: string) => {
+  const handleDeleteGalleryImage = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this image?')) {
-      await deleteGalleryImage(id, url);
+      await deleteGalleryImage(id);
       loadGallery();
     }
   };
@@ -385,7 +385,7 @@ export function Admin() {
                     <div key={item.id} className="relative group rounded-xl overflow-hidden aspect-[3/4] bg-muted">
                       <img src={item.url} alt="Gallery item" className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Button variant="danger" size="icon" onClick={() => handleDeleteGalleryImage(item.id, item.url)}>
+                        <Button variant="danger" size="icon" onClick={() => handleDeleteGalleryImage(item.id)}>
                           <Trash2 size={20} />
                         </Button>
                       </div>

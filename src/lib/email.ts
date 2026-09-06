@@ -8,7 +8,7 @@ export const TEMPLATE_ID_PENDING = 'template_ll3dhlf';
 export const TEMPLATE_ID_CONFIRMED = 'template_xr97ztq';
 
 export const sendPendingEmail = async (customerName: string, customerEmail: string) => {
-  if (!customerEmail || TEMPLATE_ID_PENDING === 'PENDING_TEMPLATE_ID') return;
+  if (!customerEmail) return;
   
   try {
     await emailjs.send(
@@ -27,7 +27,7 @@ export const sendPendingEmail = async (customerName: string, customerEmail: stri
 };
 
 export const sendConfirmationEmail = async (customerName: string, customerEmail: string) => {
-  if (!customerEmail || TEMPLATE_ID_CONFIRMED === 'CONFIRMED_TEMPLATE_ID') return;
+  if (!customerEmail) return;
   
   try {
     await emailjs.send(
