@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    /* Light Mode: Very Light Lilac Background, Eggplant Accents */
+    --background: 270 60% 98%;
+    --foreground: 280 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 50% 15%;
+
+    --primary: 280 50% 30%; /* Eggplant */
+    --primary-foreground: 270 60% 98%;
+
+    --secondary: 270 40% 92%;
+    --secondary-foreground: 280 50% 30%;
+
+    --muted: 270 40% 92%;
+    --muted-foreground: 280 20% 45%;
+
+    --accent: 270 40% 92%;
+    --accent-foreground: 280 50% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 85%;
+    --input: 270 20% 85%;
+    --ring: 280 50% 30%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Mode: Eggplant Background, Light Lilac Accents */
+    --background: 280 40% 12%; /* Deep Eggplant Background */
+    --foreground: 270 30% 95%; /* Very light lilac text */
+
+    --card: 280 35% 18%; /* Lighter eggplant for cards */
+    --card-foreground: 270 30% 95%;
+
+    --popover: 280 35% 18%;
+    --popover-foreground: 270 30% 95%;
+
+    --primary: 270 80% 85%; /* Very Light Lilac */
+    --primary-foreground: 280 50% 15%; /* Eggplant text on buttons */
+
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 80% 85%;
+
+    --muted: 270 30% 25%;
+    --muted-foreground: 270 30% 75%;
+
+    --accent: 270 40% 25%;
+    --accent-foreground: 270 80% 85%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 280 30% 25%;
+    --input: 280 30% 25%;
+    --ring: 270 80% 85%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Poppins', 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/70 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30;
+  }
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-fade-in {
+    opacity: 0;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
