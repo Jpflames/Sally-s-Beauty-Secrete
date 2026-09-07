@@ -30,16 +30,16 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-primary mt-0.5" />
-                <span>123 Beauty Avenue, Lagos, Nigeria</span>
+                <MapPin size={18} className="text-primary mt-0.5 shrink-0" />
+                <span>Madi street, Tumfure, Gombe state Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-primary" />
-                <span>+234 800 000 0000</span>
+                <Phone size={18} className="text-primary shrink-0" />
+                <span>+234 8132339194</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary" />
-                <span>hello@sallysbeautysecret.com</span>
+                <Mail size={18} className="text-primary shrink-0" />
+                <span>sallysbeautysecret@gmail.com</span>
               </li>
             </ul>
           </div>
